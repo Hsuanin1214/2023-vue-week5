@@ -3,8 +3,8 @@ const app =Vue.createApp({
         return{
             products:[],
             url:'https://ec-course-api.hexschool.io/v2',
-            path:'hsuanin-vue2024'
-
+            path:'hsuanin-vue2024',
+            selectedProduct:[],
         }
     },
     methods: {
@@ -19,8 +19,9 @@ const app =Vue.createApp({
                     console.dir(error)
                 })
         },
-        getProductDetail(){
-            
+        showProductDetail(product){
+            this.selectedProduct = product || null;
+            console.log(this.selectedProduct)
         }
     },
     mounted() {

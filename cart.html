@@ -24,7 +24,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">title</h5>
+								<h5 class="modal-title" id="exampleModalLabel">{{selectedProduct.title}}</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
@@ -33,11 +33,11 @@
 										<img src="" alt="" class="img-fuild">
 									</div>
 									<div class="col-sm-6">
-										<span class="badge rounded-pill bg-primary">Primary</span>
-										<p>產品描述: </p>
-										<p>商品內容: </p>
-										<del>原價 : </del>
-										<p>現在只要 : </p>
+										<span class="badge rounded-pill bg-primary">{{selectedProduct.category}}</span>
+										<p>產品描述: {{selectedProduct.description}}</p>
+										<p>商品內容:{{selectedProduct.content}} </p>
+										<del>原價 : {{selectedProduct.origin_price}}</del>
+										<p>現在只要 : {{selectedProduct.price}}</p>
 										<input type="text">
 										<button type="button" class="btn btn-primary">加入購物車</button>
 									</div>
@@ -74,7 +74,7 @@
 							</td>
 							<td>
 								<div class="btn-group btn-group-sm">
-									<button type="button" class="btn btn-outline-secondary">
+									<button type="button" class="btn btn-outline-secondary" @click="showProductDetail(product)">
 										<i class="fas fa-spinner fa-pulse"></i>
 										查看更多
 									</button>
